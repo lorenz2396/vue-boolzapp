@@ -167,7 +167,8 @@ createApp ({
                     ],
                 }
             ],    
-            newMessage : ''
+            newMessage : '',
+            contactSearched: ''
         }
     },
     methods: {
@@ -179,11 +180,11 @@ createApp ({
             },
             newMessageSent(){
                 console.log(this.newMessage)
-                console.log(this.contacts[this.indiceAttivo].message)  //stiamo pushando in un indice attivo, i messaggi rimarranno nell'array del contatto attivo
+                console.log(this.contacts[this.indiceAttivo].messages)  //stiamo pushando in un indice attivo, i messaggi rimarranno nell'array del contatto attivo
                 
-                this.contacts[this.indiceAttivo].message.push({
+                this.contacts[this.indiceAttivo].messages.push({
                     message: this.newMessage,
-                    date: '10/07/2023 10:44:00',
+                    date: '10:44:00',
                     status: 'sent'
                 })
     
@@ -191,12 +192,17 @@ createApp ({
     
     
                 setTimeout(() => {
-                    this.contacts[this.indiceAttivo].message.push({
+                    this.contacts[this.indiceAttivo].messages.push({
                         message: 'Ok',
-                        date: '10/07/2023 10:44:01',
+                        date: '10:44:01',
                         status: 'recived'
                     })
                 }, 1000)
+            },
+            searchContact(){
+                console.log('Persona cercata')
+                
+                
             }
     
     }

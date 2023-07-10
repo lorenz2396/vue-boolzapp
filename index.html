@@ -16,7 +16,7 @@
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     </head>
-    <body class="debug">
+    <body>
 
         <div id="app">
 
@@ -59,7 +59,8 @@
                                     <div class="search-icon">
                                         <i class="fa-solid fa-magnifying-glass"></i>
                                     </div>
-                                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                                    <input @keyup.enter="searchContact()"
+                                    type="text" placeholder="Cerca o inizia una nuova chat" v-model="contactSearched">
                                 </div>
                                 <div class="contacts-list">
 
@@ -146,7 +147,7 @@
                         </header>
 
                         <main>
-                            <template v-for="singleMessage in contacts[0].messages">
+                            <template v-for="singleMessage in contacts[indiceAttivo].messages">
                                 <div v-if="singleMessage.status == 'sent'" 
                                 class="msg-base sent">
                                     {{ singleMessage.message }}

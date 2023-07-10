@@ -238,6 +238,7 @@ body {
 #chat-container > .right > main > .msg-base.sent{
     align-self: flex-end;
     background-color: #d5f9ba;
+    margin-bottom: 10px;
 }
 
 #chat-container > .right > main > .msg-base.recived{
