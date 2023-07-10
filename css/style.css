@@ -36,6 +36,11 @@ body {
     color: #a19ba1;
 }
 
+#chat-container > .right > main > .msg-base > .smaller-text.message{
+    font-size: 8px;
+}
+
+
 /* 
     LEFT CONTAINER
 */

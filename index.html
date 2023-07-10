@@ -146,12 +146,12 @@
                         </header>
 
                         <main>
-                            <template v-for="singleMessage in contacts[0].message">
+                            <template v-for="singleMessage in contacts[0].messages">
                                 <div v-if="singleMessage.status == 'sent'" 
                                 class="msg-base sent">
                                     {{ singleMessage.message }}
     
-                                    <span>
+                                    <span class="smaller-text message">
                                         {{ singleMessage.date }}
                                     </span>
                                 </div>
@@ -159,7 +159,7 @@
                                  class="msg-base recived">
                                     {{ singleMessage.message }}
     
-                                    <span>
+                                    <span class="smaller-text message">
                                         {{ singleMessage.date }}
                                     </span>
                                 </div>
