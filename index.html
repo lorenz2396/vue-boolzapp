@@ -4,22 +4,173 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Template Vue</title>
+        <title>Boolzapp con Vue</title>
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
         <!-- CSS -->
+        <link rel="stylesheet" href="css/12bool.css">
         <link rel="stylesheet" href="css/style.css">
+
+        <!-- VUE JS -->
         <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
     </head>
-    <body>
+    <body class="debug">
 
         <div id="app">
 
-            
+            <main>
+                <div id="chat-container">
+                    <section class="left">
+
+                        <header>
+                            <div class="user-info">
+                                <img class="header-small-img" src="img/avatar_io.jpg" alt="">
+
+                                <p>
+                                    Alessia
+                                </p>
+                            </div>
+                            <div class="actions">
+                                <i class="fa-solid fa-circle-notch"></i>
+                                <i class="fa-solid fa-message"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </header>
+
+                            <section>
+                                <div class="notifications-icon">
+                                    <i class="fa-solid fa-bell-slash fa-x1"></i>
+                                </div>
+
+                                <div class="texts">
+                                    <p>
+                                        Ricevi notifiche di nuovi messaggi
+                                    </p>
+                                    <a href="#" style="font-size: smaller;">
+                                        Attiva notifiche desktop
+                                    </a>
+                                </div>
+                            </section>
+
+                            <main>
+                                <div class="search-contacts">
+                                    <div class="search-icon">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+                                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                                </div>
+                                <div class="contacts-list">
+
+                                    <div class="single-contact">
+                                        <img class="small-circle-img" src="img/avatar_1.jpg" alt="">
+                                        <div class="contact-info">
+                                            <p>
+                                                Fabio
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="single-contact">
+                                        <img class="small-circle-img" src="img/avatar_2.jpg" alt="">
+                                        <div class="contact-info">
+                                            <p>
+                                                Samuele
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="single-contact">
+                                        <img class="small-circle-img" src="img/avatar_3.jpg" alt="">
+                                        <div class="contact-info">
+                                            <p>
+                                                Alessandro B.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="single-contact">
+                                        <img class="small-circle-img" src="img/avatar_4.jpg" alt="Alessandro L.">
+                                        <div class="contact-info">
+                                            <p>
+                                                Alessandro L.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="single-contact">
+                                        <img class="small-circle-img" src="img/avatar_5.jpg" alt="Claudia">
+                                        <div class="contact-info">
+                                            <p>
+                                                Claudia
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </main>
+
+                    </section>
+                    <section class="right">
+                        <header>
+                            <div class="user-info">
+                                <img class="header-small-img" src="img/avatar_1.jpg" alt="Michele">
+                                <div>
+                                    <p>
+                                        Michele
+                                    </p>
+                                    <p class="smaller-text">
+                                        Ultimo accesso oggi alle
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="actions">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <i class="fa-solid fa-paperclip"></i>
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </div>
+                        </header>
+
+                        <main>
+                            <div class="msg-base sent">
+                                    Messaggio
+    
+                                    <span>
+                                       15:35
+                                    </span>
+                                </div>
+                                <div class="msg-base recived">
+                                    Messaggio
+    
+                                    <span>
+                                        15:45
+                                    </span>
+                                </div>
+
+                        </main>
+
+                        <footer>
+                            <div class="icons-keyboard">
+                                <i class="fa-regular fa-face-smile fa-x1"></i>
+                            </div>
+                            <div class="keyboard-input">
+                                <input type="text" placeholder="Scrivi un messaggio">
+                            </div>
+                            <div class="icons-keyboard">
+                                <i class="fa-solid fa-microphone fa-x1"></i>
+                            </div>
+                        </footer>
+
+                    </section>
+                </div>
+                
+            </main>
 
         </div>
 
         <script src="./js/scripts.js" type="text/javascript"></script>
     </body>
 </html>
+
+
+
+
+
+
+         
