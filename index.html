@@ -63,7 +63,25 @@
                                 </div>
                                 <div class="contacts-list">
 
-                                    <div class="single-contact">
+                                    <div @click="changeActiveContact(i)"
+                                    v-for="(singleContact, i) in contacts"
+                                    class="single-contact"
+                                    :class="{
+                                        'active' : i == indiceAttivo
+                                    }">
+                                    <img class="small-circle-img" :src="singleContact.avatar" :alt="singleContact.name">
+                                    <div class="contact-info">
+                                        <p>
+                                            {{ singleContact.name }}
+                                        </p>
+                                        <span class="smaller-text">
+                                            Ultimo messaggio inviato
+                                        </span>
+                                    </div>
+                                </div>
+
+
+                                    <!-- <div class="single-contact">
                                         <img class="small-circle-img" src="img/avatar_1.jpg" alt="">
                                         <div class="contact-info">
                                             <p>
@@ -102,7 +120,7 @@
                                                 Claudia
                                             </p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </main>
 
@@ -110,10 +128,10 @@
                     <section class="right">
                         <header>
                             <div class="user-info">
-                                <img class="header-small-img" src="img/avatar_1.jpg" alt="Michele">
+                                <img class="header-small-img" :src="contacts[indiceAttivo].avatar" :alt="contacts[indiceAttivo].name">
                                 <div>
                                     <p>
-                                        Michele
+                                        {{ contacts[indiceAttivo].name }}
                                     </p>
                                     <p class="smaller-text">
                                         Ultimo accesso oggi alle
@@ -128,20 +146,24 @@
                         </header>
 
                         <main>
-                            <div class="msg-base sent">
-                                    Messaggio
+                            <template v-for="singleMessage in contacts[0].message">
+                                <div v-if="singleMessage.status == 'sent'" 
+                                class="msg-base sent">
+                                    {{ singleMessage.message }}
     
                                     <span>
-                                       15:35
+                                        {{ singleMessage.date }}
                                     </span>
                                 </div>
-                                <div class="msg-base recived">
-                                    Messaggio
+                                <div v-else
+                                 class="msg-base recived">
+                                    {{ singleMessage.message }}
     
                                     <span>
-                                        15:45
+                                        {{ singleMessage.date }}
                                     </span>
                                 </div>
+                            </template>
 
                         </main>
 
@@ -149,9 +171,14 @@
                             <div class="icons-keyboard">
                                 <i class="fa-regular fa-face-smile fa-x1"></i>
                             </div>
+
                             <div class="keyboard-input">
-                                <input type="text" placeholder="Scrivi un messaggio">
+                                <input @keyup.enter="newMessageSent()" 
+                                type="text" placeholder="Scrivi un messaggio" v-model="newMessage">
                             </div>
+                            <!-- <div class="keyboard-input">
+                                <input type="text" placeholder="Scrivi un messaggio">
+                            </div> -->
                             <div class="icons-keyboard">
                                 <i class="fa-solid fa-microphone fa-x1"></i>
                             </div>

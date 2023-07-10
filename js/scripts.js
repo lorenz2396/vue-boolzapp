@@ -173,6 +173,32 @@ createApp ({
     },
     methods: {
        
+			changeActiveContact(index){
+                console.log('cliccato sul contatto', index)
+    
+                this.indiceAttivo = index;
+            },
+            newMessageSent(){
+                console.log(this.newMessage)
+                console.log(this.contacts[this.indiceAttivo].message)  //stiamo pushando in un indice attivo, i messaggi rimarranno nell'array del contatto attivo
+                this.contacts[this.indiceAttivo].message.push({
+                    message: this.newMessage,
+                    date: '10/07/2023 10:44:00',
+                    status: 'sent'
+                })
+    
+                this.newMessage = ''
+    
+    
+                setTimeout(() => {
+                    this.contacts[this.indiceAttivo].message.push({
+                        message: 'Ok',
+                        date: '10/07/2023 10:44:01',
+                        status: 'recived'
+                    })
+                }, 1000)
+            }
+    
     }
 
 }).mount('#app');
